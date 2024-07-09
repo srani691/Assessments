@@ -49,10 +49,23 @@ public static void main(String[] args){
         }
         System.out.println("Highest marks: " + highest);
         System.out.println("Lowest marks: " + lowest);
+        
+          // Compute Mean and Standard Deviation
+        double sum = 0;
+        for (double mark : marks) {
+            sum += mark;
+        }
+        double mean = sum / marks.size();
 
+        double variance = 0;
+        for (double mark : marks) {
+            variance += Math.pow(mark - mean, 2);
+        }
+        variance /= marks.size();
+        double standardDeviation = Math.sqrt(variance);
 
-   
-    
+        System.out.println("Mean (average) mark: " + mean);
+        System.out.println("Standard deviation: " + standardDeviation);
     
 }
 }
